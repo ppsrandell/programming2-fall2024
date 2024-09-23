@@ -1,0 +1,16 @@
+h1 {
+    font-family:monospace;
+    color:#d5e5ff;
+    border: 3px dashed #ff57e5;
+}
+
+*{
+    background-color: #ffded2;
+        background-image: radial-gradient(#75afff, #ca96ea, pink);
+}
+
+p{
+    font-family:serif;
+    font-size: medium;
+    font-weight: 800; 
+}
