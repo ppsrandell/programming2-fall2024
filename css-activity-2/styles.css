@@ -1,20 +1,20 @@
-.redbox {
-    background-color:#ff7b7b
-}
-
-#bigblue {
-    color:blue;
-    font-size:xx-large
-}
-
-.largered {
+.red {
     background-color:#ff7b7b;
+    font-family: Verdana, "DejaVu sans", sans-serif;
+}
+
+#blue {
+    color:blue;
+    font-size:xx-large;
+}
+
+.mid-font {
     font-size:x-large;
 }
 
-#leangreen {
+#green {
     background-color: chartreuse;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 

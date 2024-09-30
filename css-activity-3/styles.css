@@ -1,0 +1,17 @@
+#1, box {
+    background-color: black;
+    color: white;
+}
+
+#2, box{
+    background-color: yellow;
+    color: black
+}
+
+.box{
+    border-width: medium;
+    border-block-color: gray;
+    border-block-end-color: dimgray;
+    font-size: 28px;
+    font-family: Helvetica, "Times New Roman", sans-serif;
+}
