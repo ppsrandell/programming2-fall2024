@@ -1,0 +1,16 @@
+.avatar.proportioned{
+    height: auto;
+    width: 300px; 
+}
+
+.avatar.distorted{
+    width: 200px;
+    height: 400px;
+}
+
+.container{
+    background-color: yellow;
+    color:red;
+    font-size: 20px;
+    text-align: center;
+}
