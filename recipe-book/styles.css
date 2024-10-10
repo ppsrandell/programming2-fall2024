@@ -1,0 +1,14 @@
+.cajun{
+    background-color: #ffc260;
+    text-align: center;
+}
+
+.border1{
+    border: groove #ff9d00 10px;   
+}
+
+.cajuntitle{
+    font-family: "Sofia", sans-serif;
+    font-size: 30px;
+    effect: font-effect-fire ;
+}
