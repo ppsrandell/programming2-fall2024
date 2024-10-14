@@ -1,14 +1,74 @@
 .cajun{
     background-color: #ffc260;
     text-align: center;
+    color: crimson;
+    font-family: "Courier New", cursive, sans-serif
 }
 
 .border1{
     border: groove #ff9d00 10px;   
+    height: fit-content;
+    width: 150;
+    margin: 5px, 20px, 10px, 20px;
 }
 
+.p-paddings{
+    display: block;
+    padding: 5px;
+}
+
+.corn{
+    background-color: cornsilk;
+    text-align: center;
+    color: #c19d00;
+    font-family: cursive, Verdana, sans-serif;
+}
+
+#desc{
+    color: #cc0000;
+}
+
+.cornborder{
+    border:groove #ffe05a 10px;
+    height: fit-content;
+    width: 100;
+    margin: 5px, 20px, 10px, 20px;
+}
+
+.chicken{
+    background-color: azure;
+    text-align: center;
+    color: darkgreen;
+    font-family: "Times New Roman", Copperplate, sans-serif;
+}
+
+.chickenborder {
+    border: groove #8ec6ff 10px;
+    height: fit-content;
+    width: 175;
+    margin: 5px, 20px, 10px, 20px;
+}
+
+/*
 .cajuntitle{
     font-family: "Sofia", sans-serif;
     font-size: 30px;
     effect: font-effect-fire ;
+}
+*/
+
+.indexstyle{
+    background-color: #d8c0e5;
+}
+
+#link1{
+    color: cornflowerblue;
+}
+
+#link2{
+    color: lightgoldenrodyellow;
+}
+
+#link3{
+    color: brown;
 }
