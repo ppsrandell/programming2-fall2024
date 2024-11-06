@@ -1,12 +1,17 @@
 /* this is some magical font-importing.  
 you'll learn about it later. */
-@import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 body {
   margin: 0;
   background: #eee;
-  font-family: Besley, serif;
+  font-family: 'Indie Flower', serif;
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  overflow: hidden;
 }
+
 
 .header {
   background: white;
@@ -18,6 +23,7 @@ body {
   padding:8px;
 }
 
+
 .profile-image {
   background: #f4ec81;
   box-shadow: inset 2px 2px 4px rgba(0,0,0,.5);
@@ -26,6 +32,7 @@ body {
   height: 48px;
 }
 
+
 .logo {
   color: #f4ec81;
   font-size: 32px;
@@ -33,19 +40,23 @@ body {
   font-style: italic;
 }
 
+
 button {
   border: none;
   border-radius: 8px;
   background: #f2df73;
+  font-family: 'Indie Flower', serif;
   color: white;
   padding: 8px 24px;
 }
+
 
 a {
   /* this removes the line under our links */
   text-decoration: none;
   color: #f2df73;
 }
+
 
 ul {
   list-style-type: none;
@@ -55,6 +66,7 @@ ul {
   padding:0;
 }
 
+
 .left,
 .right{
   display:flex;
@@ -62,13 +74,66 @@ ul {
   align-items:center;
 }
 
+
 .content{
   display:flex;
+  height: (100vh-87px);
+  overflow-y: scroll;
 }
+
+
 .gallery{
   display:flex;
+  flex: 3 1 400px;
+  gap:20px;
+  overflow-y: scroll;
 }
+
+
 .description{
   display:flex;
   flex-direction:column;
+  align-items: center;
+  flex: 1 1 400px;
+  padding:20px;
+  border: 2px solid gray;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+
+.column{
+  display:flex; 
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap:20px;
+  flex: 1;
+}
+
+
+.item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: flex-end;
+  width: 200px;
+}
+
+
+.image{
+  max-width: 100%;
+  height:auto;
+}
+
+
+#profile-pic{
+  width:80%; 
+}
+
+
+#more-info{
+  background-color: lightgray;
+  height: 200px;
+  width:100%;
+  border-radius: 15px;
 }
