@@ -49,23 +49,30 @@
 //    alert("wear a hoodie");
 //}
 
-let username = 12345;
+const username = 12345;
 let password = 67891;
 
-const u = document.getElementById("username").value;
-const p = document.getElementById("password").value;
-document.getElementById("u").innerText=u;
-document.getElementById("p").innerText=p;
-
-if (username==12345 && password==67891){
-    alert("you're in");
+function login(){
+    
+    const u = document.getElementById("username").value;
+    const p = document.getElementById("password").value;
+    let message = document.getElementById("yourMessage");
+    
+    if (u==username && p==password){
+    message.innerText = "logged in";
+    message.style.color = "green";
 }
-else if (username == 12345 && password != 67891){
-    alert("try again");
+    else if (u==username && p!=password){
+    message.innerText = "password is incorrect";
+    message.style.color = "red";
 }
-else if (username != 12345 && password == 67891){
-    alert("try again");
+    else if (u!=username && p==password){
+    message.innerText = "username is incorrect";
+    message.style.color = "red";
 }
-else if (username != 12345 && password != 67891){
-    alert("try again");
+    else if (u!=username && p!=password){
+    message.innerText = "both inputs are incorrect";
+    message.style.color = "red";
+}
+    
 }
