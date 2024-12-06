@@ -29,14 +29,14 @@ daily.push("toothbrush", "computer");
 console.log(daily);
 daily.pop();
 console.log(daily);
-daily.splice(2,1,"marker");
+daily.splice(1,1,"marker");
 console.log(daily);
-daily.splice(3,1);
+daily.splice(2,1);
 console.log(daily);
 
 let nums = [2,0,2];
 console.log(nums);
-nums.splice(3,1,6);
+nums.splice(0,1,6);
 console.log(nums);
 nums.splice(1,1,2);
 console.log(nums);
