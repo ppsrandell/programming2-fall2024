@@ -29,7 +29,11 @@ function removeTask(){
 
 function priority(){
     let task = prompt("Make this task a priotity");
-    task = task[0];
-    document.getElementById(task).style.color = "yellow";
-    showTasks();
+    let taskListUl = document.getElementById("task-list");
+    let listItems= taskListUl.getElementsByTagName("li");
+    for (let i=0; i < tasks.length; i++){
+        if(tasks[i]==task){
+            listItems[i].style.color = "yellow";
+        }
+    }
 }

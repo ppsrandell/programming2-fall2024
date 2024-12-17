@@ -101,3 +101,7 @@ p {
   color: black;
   padding: 4px;
 }
+
+.clicked{
+  background-color: #9bc9e2;
+}
