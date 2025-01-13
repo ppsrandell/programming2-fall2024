@@ -17,15 +17,19 @@
 
 let animals = ["dog", "frog", "hog", "warthog", "groundhog"];
 for (let i = 0; i < animals.length; i++){
-    //animals.push().toUpperCase();
     console.log(animals[i]);
+	let animals_uCase = animals[i].toUpperCase();
+	console.log(animals_uCase);
 }
 animals.pop();
 animals.pop();
-console.log(animals);
 
 let scores = [30, 40, 50, 55, 60, 70, 80, 90, 95, 100];
-let newScore = [scores+5];
+
 for (let i = 0; i < scores.length; i++){
-	console.log(newScore[i]);
+	let newScore = [scores[i]+5];
+	if (score [i] < 50){
+		score.splice(i, 1, "retake this one");
+	}
 }
+console.log(newScore[i]);

@@ -35,6 +35,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-align: center;
   justify-content: center;
   border: 2px solid #ddbbcd;
   background: #ddbbcd;
@@ -53,7 +54,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 18%;
+  margin-top: 5%;
   /* flex-shrink: 1; */
 }
 
@@ -100,8 +101,12 @@ p {
   background: #5e74e4;
   color: black;
   padding: 4px;
+  margin-bottom: 6px;
 }
 
 .clicked{
   background-color: #9bc9e2;
 }
+
+
+
