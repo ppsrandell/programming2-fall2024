@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+
     const pairs =[
         {word: "Neurons", match: "excitable cells that respond to stimuli by conducting impulses to transmit signals"},
         {word: "Neuroglia", match: "supportive cells that provide nutrition, insulation, and help with signal transmission"},
@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
         {word: "Sympathetic Nervous System", match: "excites you/amps you up"},
         {word: "Neurotransmitters", match: "chemicals released from neurons to cross synapses"},
         {word: "Hormones", match: "chemicals released from glands into the bloodstream"},
-        {word:"fill in", match:"the blank"},
+        {word: "Afferent Nerve Fibers", match: "axons of sensory neurons that carry sensory information from sensory receptors to the central nervous system"},
     ];
     
     let cards = document.getElementsByClassName("item");
     //create a new array for slected pairs this round
         let cardPairs = [];
-    let score = document.getElementById("tally");
+    let score = "";
     let tally = 0;
     console.log(cards);
     
@@ -45,11 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     function shuffleAssign(){
+        score = document.getElementById("tally");
         //shuffle list of pairs
         console.log(pairs);
         let shuffledPairs = shuffleArray(pairs);
         console.log(shuffledPairs);
         //add the first cards.length/2 pairs (word and match) to new array
+        cardPairs = [];
         for (let i=0; i<cards.length/2; i++){
             cardPairs.push(shuffledPairs[i].word);
             cardPairs.push(shuffledPairs[i].match);
@@ -60,22 +62,31 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(pairs);
         //shuffle that array
         cardPairs = shuffleArray(cardPairs);
+        console.log(cardPairs);
         //iterate over that array to assign cards
-        for (let i = 0; i<cardPairs.length; i++){
+        cards = document.getElementsByClassName("item");
+        console.log(cards);
+        for (let i = 0; i<cards.length; i++){
+            console.log(cardPairs[i]);
             cards[i].innerText = cardPairs[i];
             cards[i].onclick = isClicked;
         }
+    }
     
-    
-    function isClicked(e){
+    // this happens when a card is selected
+    function isClicked(e){ 
         let cardClicked = e.srcElement;
         if (cardClicked.classList.value.indexOf("clicked") != -1){
             cardClicked.classList.remove("clicked");
+            //cardClicked.style.backgroundColor = "#ddbbcd";
             return;
         }
+        
         console.log(cardClicked.classList);
+        //cardClicked.style.backgroundColor = "#9bc9e2";
         cardClicked.classList.add("clicked");
         let clicked = document.getElementsByClassName("clicked");
+        console.log(clicked);
         if (clicked.length == 2){
             //look for a match
             if (isMatch(clicked[0].innerText, clicked[1].innerText)){
@@ -87,18 +98,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 clicked[0].classList.remove("clicked");
                 clicked[0].classList.remove("clicked");
                 
-                tally +=1;
+                // adding to the tally when the match is correct
+                tally +=1; 
                 score.innerText= tally+"/24 Correct";
+                console.log(pairs);
                 if (tally  == 12){
+                    if(pairs.length != 12) {
                      for (let i=0; i<cardPairs.length; i++){
                         for (let j=0; j<pairs.length;j++){
                             if (cardPairs[i]==pairs[j].word){
-                                console.log(cardPairs[i]);
-                                console.log(pairs[j].word);
+                                //console.log(cardPairs[i]);
+                                //console.log(pairs[j].word);
                                 pairs.splice(j, 1);
                             }
             }
         }
+                    }
+                    console.log(pairs);
+                    for (let i =0; i<cards.length; i++){
+                        cards[i].style.backgroundColor = "#ddbbcd";
+                        cards[i].disabled = false;
+                    }
                     shuffleAssign();
                 }
                 
@@ -109,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
+    // when the match is correct
     function isMatch(item1,item2){
         for (let i = 0; i < pairs.length; i++){
             if (item1 === pairs[i].word && item2 === pairs[i].match || item2 === pairs[i].word && item1 === pairs[i].match){
@@ -120,13 +141,51 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return false;
     }
+
+//timer function with a limit of five minutes
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
 }
+
+function start() {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+}
+
+
+
+// when they finish with the game
+function finished() {
+  alert('You finished the game! Congratulations!');
+}
+
+if (tally == 24){
+    finished();
+}
+    
+
+    
 
     // restart button
     // include timer
+
     
     
     shuffleAssign();
-});
+//});
 
 

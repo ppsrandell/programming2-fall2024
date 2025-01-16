@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="styles.css" />
     <script src='script.js'></script>
   </head>
-  <body>
+  <body onload="shuffleAssign()">
     <div class="header">
       <h1>Nervous System Review</h1>
       <div id="start">
-        <button id="button">Start</button>
-        <div id="tally">
-          <h>Time: 0:00</h>
-          <h>0/24 Correct</h>
+        <button id="button" onclick = "start()">Start</button>
+        <div>
+          <p id="tally">0/24 Correct</p>
+          <div id = "timer"><span id="time"> Time: 0:00 - 05:00</span></div>
         </div>
       </div>
     </div>
